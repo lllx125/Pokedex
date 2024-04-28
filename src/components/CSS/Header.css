@@ -1,0 +1,13 @@
+
+.link {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+.link:hover {
+    text-decoration: none;
+    color: blue;
+}
+.nav-item {
+    padding: 10px;
+}

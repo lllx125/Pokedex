@@ -7,12 +7,14 @@ import { PokemonClient } from "pokenode-ts";
 import "./App.css";
 import Pokemon from "./Pokemon";
 import Detail from "./components/Detail";
+import Signup from "./components/Signup";
+import Signin from "./components/Signin";
 
 function App() {
     // string typed in the search bar, if 'search' is empty, show all pokemons
     const [search, setSearch] = useState("");
     // user name state, if 'user' is empty, then the account is logged out
-    const [user, setUser] = useState("Lixing");
+    const [user, setUser] = useState("");
     // stores the route to the detail page of each pokemon
     const [detailPages, setDetailPages] = useState<ReactNode[]>([]);
 
@@ -91,8 +93,11 @@ function App() {
                         </>
                     }
                 ></Route>
-                <Route path="/sign-in" element={<h1>sign in</h1>}></Route>
-                <Route path="/sign-up" element={<h1>sign up</h1>}></Route>
+                <Route
+                    path="/sign-in"
+                    element={<Signin user={user} setUser={setUser} />}
+                ></Route>
+                <Route path="/sign-up" element={<Signup />}></Route>
                 {detailPages}
             </Routes>
         </BrowserRouter>

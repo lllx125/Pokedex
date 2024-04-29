@@ -2,9 +2,15 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    vertical-align: middle;
-    border: 5px solid black;
+    max-width: fit-content;
+    border: 5px solid rgb(114, 41, 16);
     background-color: blanchedalmond;
+    display: block;
+}
+
+tbody {
+    justify-content: center;
+    display: grid;
 }
 
 .tabHead {

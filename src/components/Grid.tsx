@@ -36,7 +36,7 @@ function Grid({ pokemons, search }: Props) {
     return (
         <>
             <h1 className="tabHead">
-                Pokemons {!search ? " " : " with: " + search}
+                Pokemons {!search ? " " : ' with: "' + search + '"'}
             </h1>
             <table className="tab">
                 <tbody>

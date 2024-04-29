@@ -1,10 +1,12 @@
-# React + TypeScript + Vite + Boostrap
+#Welcome to Lixing's Pokedex
+
+If you don't want to download, check out:
 
 # How to Run
 
 1. Download or clone the entire file
 2. Open terminal, cd to the file, and run the code 'npm run dev'
-3. There will be a link on the terminal, copy that link to the browser
+3. There will be a link on the terminal that looks like "http://localhost:xxxx/", copy that link to your browser
 
 # How to Use
 

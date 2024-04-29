@@ -1,0 +1,48 @@
+.box {
+
+    background-color: lightgreen;
+    display: block;
+    border: 3px solid darkgreen;
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    width: 500px;
+    padding: 30px;
+}
+.title {
+    text-align: center;
+}
+.back {
+    width: 40px;
+    margin: 30px;
+    margin-right: 10px;
+}
+.linkBack {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin: 0px;
+}
+.spacer {
+    margin-top:30px;
+}
+.greenbtn {
+    background-color: green !important;
+    border: 2px solid darkgreen !important;
+}
+.greenbtn:hover {
+    background-color: darkcyan !important;
+    border: 2px solid darkgreen !important;
+}
+.right {
+    align-self: flex-end;
+    text-align: right;
+}
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0px;
+}

@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 import "./CSS/Header.css";
 import { useRef, useState } from "react";
 
-const Header = (props) => {
+interface Props {
+    user: string;
+    setUser: React.Dispatch<React.SetStateAction<string>>;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function Header({ user, setUser, setSearch }: Props) {
+    document.body.style.backgroundColor = "white";
     const [searchBar, setSearchBar] = useState("");
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -15,21 +22,21 @@ const Header = (props) => {
                         alt="Resized Image"
                         width="30"
                         onClick={() => {
-                            props.setSearch("");
-                            console.log(props.user);
+                            setSearch("");
+                            console.log(user);
                         }}
                     />
                 </Link>
-                {/* If user is not signed in props.user="" and the sign in link will display
+                {/* If user is not signed in user="" and the sign in link will display
                 If the user has signed in it will is display Hi, 'user', and a log out link*/}
-                {props.user ? (
+                {user ? (
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">Hi, {props.user}</li>
+                        <li className="nav-item">Hi, {user}</li>
                         <li className="nav-item">
                             <Link
                                 to="/"
                                 className="link"
-                                onClick={() => props.setUser("")}
+                                onClick={() => setUser("")}
                             >
                                 Log out
                             </Link>
@@ -54,7 +61,7 @@ const Header = (props) => {
                         role="search"
                         onSubmit={(e) => {
                             e.preventDefault();
-                            props.setSearch(searchBar);
+                            setSearch(searchBar);
                         }}
                     >
                         <input
@@ -77,6 +84,6 @@ const Header = (props) => {
             </div>
         </nav>
     );
-};
+}
 
 export default Header;

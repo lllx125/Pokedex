@@ -1,0 +1,45 @@
+.back {
+    width: 40px;
+    margin: 30px;
+    margin-right: 10px;
+}
+.linkBack {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin: 0px;
+}
+.linkBack:hover {
+    color: blue;
+}
+.title {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    font:100px;
+}
+.im {
+    display: block;
+    width: 300px;
+    margin: 30px;
+    border: 10px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+.infoArea {
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite;
+    border: 1px solid rgb(185, 181, 140);
+    margin: 0px;
+}
+.description {
+    margin: 30px;
+}
+.description h1 {
+    font-size: 60px;
+    text-transform: capitalize;
+}
+.description h5 {
+    padding-left: 10px;
+}

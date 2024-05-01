@@ -5,10 +5,9 @@ import "./CSS/Grid.css";
 
 interface Props {
     pokemons: Pokemon[];
-    search: string;
 }
 
-function Grid({ pokemons, search }: Props) {
+function Grid({ pokemons }: Props) {
     const itemPerRow = Math.floor(window.innerWidth / 220);
     const [tab, setTab] = useState<ReactNode[]>([]);
     const count = useRef(0);
@@ -34,20 +33,15 @@ function Grid({ pokemons, search }: Props) {
         setTab(temp);
     }, [pokemons]);
     return (
-        <>
-            <h1 className="tabHead">
-                Pokemons {!search ? " " : ' with: "' + search + '"'}
-            </h1>
-            <table className="tab">
-                <tbody>
-                    {tab.length ? (
-                        tab
-                    ) : (
-                        <h1 className="tabHead">No Pokemons Found</h1>
-                    )}
-                </tbody>
-            </table>
-        </>
+        <table className="tab">
+            <tbody>
+                {tab.length ? (
+                    tab
+                ) : (
+                    <h1 className="tabHead">No Pokemons Found</h1>
+                )}
+            </tbody>
+        </table>
     );
 }
 

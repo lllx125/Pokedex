@@ -23,7 +23,8 @@ function App() {
     //percentage of pokemons downloaded
     const [loading, setLoading] = useState(0);
     //number of pokemons
-    const total = 10;
+    const total = 11;
+    //download pokemons
     useEffectOnce(() =>
         (async () => {
             const api = new PokemonClient();
@@ -40,16 +41,7 @@ function App() {
                     detailPages.push(
                         <Route
                             path={"/" + newPokemon.name}
-                            element={
-                                <>
-                                    <Header
-                                        setSearch={setSearch}
-                                        user={user}
-                                        setUser={setUser}
-                                    />
-                                    <Detail pokemon={pokemonData} />
-                                </>
-                            }
+                            element={<Detail pokemon={pokemonData} />}
                         ></Route>
                     );
                     //console.log(pokemonData);
@@ -67,38 +59,54 @@ function App() {
     useEffect(() => {
         setDisplay(pokemons.filter((p) => p.name.includes(search)));
     }, [search]);
+
+    const PageWithHeader = () => {
+        return (
+            <>
+                <Header setSearch={setSearch} user={user} setUser={setUser} />
+                <Routes>
+                    <Route
+                        path=""
+                        element={
+                            <>
+                                {loading < total ? (
+                                    <div className="Loading">
+                                        Loading:
+                                        {" " +
+                                            Math.floor(
+                                                (loading * 1000) / total
+                                            ) /
+                                                10}
+                                        %
+                                    </div>
+                                ) : (
+                                    <>
+                                        <h1 className="tabHead">
+                                            Pokemons{" "}
+                                            {!search
+                                                ? " "
+                                                : ' with: "' + search + '"'}
+                                        </h1>
+                                        <Grid pokemons={display} />
+                                    </>
+                                )}
+                            </>
+                        }
+                    ></Route>
+                    {detailPages}
+                </Routes>
+            </>
+        );
+    };
     return (
         <BrowserRouter>
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <>
-                            <Header
-                                setSearch={setSearch}
-                                user={user}
-                                setUser={setUser}
-                            />
-                            {loading < total ? (
-                                <div className="Loading">
-                                    Loading:
-                                    {" " +
-                                        Math.floor((loading * 1000) / total) /
-                                            10}
-                                    %
-                                </div>
-                            ) : (
-                                <Grid pokemons={display} search={search} />
-                            )}
-                        </>
-                    }
-                ></Route>
+                <Route path="*" element={<PageWithHeader />} />
                 <Route
                     path="/sign-in"
                     element={<Signin user={user} setUser={setUser} />}
-                ></Route>
-                <Route path="/sign-up" element={<Signup />}></Route>
-                {detailPages}
+                />
+                <Route path="/sign-up" element={<Signup />} />
             </Routes>
         </BrowserRouter>
     );

@@ -1,4 +1,19 @@
 {
-    "Lixing": "Aa123456",
-    "llx125": "Qwerty123"
+  "accounts": [
+    {
+      "id": "b60f",
+      "userName": "Lixing",
+      "pwd": "Aa12345"
+    },
+    {
+      "id": "542e",
+      "userName": "Cat",
+      "pwd": "CatCat1"
+    },
+    {
+      "id": "a077",
+      "userName": "Dog",
+      "pwd": "DogDog2"
+    }
+  ]
 }

@@ -13,17 +13,17 @@ function Signin({ user, setUser }: Props) {
     const [fail, setFail] = useState(false);
     const onSubmit = (e) => {
         e.preventDefault();
-        fetch("/src/database/account.json")
+        fetch("http://localhost:3000/accounts")
             .then((res) => {
                 return res.json();
             })
             .then((data) => {
-                if (data.hasOwnProperty(userName)) {
-                    if (data[userName] == pwd) {
+                setFail(true);
+                for (const account of data) {
+                    if (account.userName == userName && account.pwd == pwd) {
                         setUser(userName);
+                        setFail(false);
                     }
-                } else {
-                    setFail(true);
                 }
             });
     };
@@ -34,7 +34,7 @@ function Signin({ user, setUser }: Props) {
                 <img src={back} className="back" />
                 Back to Home
             </Link>
-            <div className="box">
+            <div className="box signin">
                 {user ? (
                     <h1 className="title">You have Successfully Signed In</h1>
                 ) : (

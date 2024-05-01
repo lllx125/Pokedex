@@ -1,14 +1,20 @@
 .box {
 
-    background-color: lightgreen;
     display: block;
-    border: 3px solid darkgreen;
     border-radius: 3px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
     width: 500px;
     padding: 30px;
+}
+.signin {
+    background-color: lightgreen;
+    border: 3px solid darkgreen;
+}
+.signup {
+    background-color: lightblue;
+    border: 3px solid darkblue;
 }
 .title {
     text-align: center;
@@ -34,6 +40,14 @@
 .greenbtn:hover {
     background-color: darkcyan !important;
     border: 2px solid darkgreen !important;
+}
+.bluebtn {
+    background-color: blue !important;
+    border: 2px solid darkblue !important;
+}
+.bluebtn:hover {
+    background-color: darkslateblue !important;
+    border: 2px solid darkblue !important;
 }
 .right {
     align-self: flex-end;

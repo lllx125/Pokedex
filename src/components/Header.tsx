@@ -1,7 +1,8 @@
 import logo from "../assets/pokeball_gray.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./CSS/Header.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { redirect, useNavigate } from "react-router-dom";
 
 interface Props {
     user: string;
@@ -11,7 +12,9 @@ interface Props {
 
 function Header({ user, setUser, setSearch }: Props) {
     document.body.style.backgroundColor = "white";
+    //text in the searh bar
     const [searchBar, setSearchBar] = useState("");
+    const navigate = useNavigate();
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -62,6 +65,7 @@ function Header({ user, setUser, setSearch }: Props) {
                         onSubmit={(e) => {
                             e.preventDefault();
                             setSearch(searchBar);
+                            navigate("/");
                         }}
                     >
                         <input
@@ -73,6 +77,7 @@ function Header({ user, setUser, setSearch }: Props) {
                                 setSearchBar(e.target.value);
                             }}
                         />
+
                         <button
                             className="btn btn-outline-success"
                             type="submit"

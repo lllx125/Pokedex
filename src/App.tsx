@@ -23,7 +23,7 @@ function App() {
     //percentage of pokemons downloaded
     const [loading, setLoading] = useState(0);
     //number of pokemons
-    const total = 11;
+    const total = 50;
     //download pokemons
     useEffectOnce(() =>
         (async () => {

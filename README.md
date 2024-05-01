@@ -10,7 +10,7 @@ Video explaining all the codes:
 2. Open terminal, cd to the file pokedex, and run the code 'npm run dev'
 3. There will be a link on the terminal that looks like "http://localhost:xxxx/", copy that link to your browser
 4. Open a new terminal, cd to the file pokedex, and run the code 'npx json-server --watch src/database/account.json'. That sets up the database
-5. Since it is slow to download data from API, the pokedex only loads 30 pokemons by default. If you want to load more, open 'App.tsx' and change 'total' on line 26 to the number of pokemons you want (max 1306).
+5. Since it is slow to download data from API, the pokedex only loads 50 pokemons by default. If you want to load more, open 'App.tsx' and change 'total' on line 26 to the number of pokemons you want (max 1306).
 
 # Account
 

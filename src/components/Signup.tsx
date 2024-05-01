@@ -30,7 +30,7 @@ function Signup() {
             case 2:
                 return (
                     <div className="alert alert-danger" role="alert">
-                        Your username is taken
+                        This username has been taken
                     </div>
                 );
             case 3:
@@ -38,7 +38,7 @@ function Signup() {
                     <div className="alert alert-danger" role="alert">
                         Your password is invalid. Password must be 6~24
                         characters, include at least one upper case, lower case,
-                        number
+                        and number
                     </div>
                 );
             case 4:

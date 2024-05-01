@@ -1,8 +1,8 @@
 import logo from "../assets/pokeball_gray.png";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./CSS/Header.css";
 import { useState } from "react";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
     user: string;
@@ -26,7 +26,6 @@ function Header({ user, setUser, setSearch }: Props) {
                         width="30"
                         onClick={() => {
                             setSearch("");
-                            console.log(user);
                         }}
                     />
                 </Link>

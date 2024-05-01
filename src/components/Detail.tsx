@@ -107,18 +107,18 @@ function Detail({ pokemon }: Props) {
                         "and " + pokemon.types[2].type.name + " "}
                     pokemon <br />
                     with {pokemon.abilities[1] ? "abilities" : "ability"}{" "}
-                    {pokemon.abilities[0].ability.name}{" "}
+                    {pokemon.abilities[0].ability.name}
                     {pokemon.abilities[1] &&
-                        "and " + pokemon.abilities[1].ability.name}
+                        " and " + pokemon.abilities[1].ability.name}
                     .<br />
                     {pokemon.held_items[0] && (
                         <>
                             You might see it holding
-                            {pokemon.held_items[0].item.name} <br />
+                            {" " + pokemon.held_items[0].item.name}. <br />
                         </>
                     )}
                     When you defeat it, you will gain {pokemon.base_experience}{" "}
-                    experience
+                    experience.
                 </div>
                 <div>--</div>
             </div>

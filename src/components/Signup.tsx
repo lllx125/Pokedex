@@ -1,19 +1,19 @@
 import "./CSS/Account.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import back from "../assets/back.png";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import "./CSS/Account.css";
 
 function Signup() {
     //username must be within 3 to 24 characters
     const USER_REGEX = /^[a-zA-Z0-9-_]{3,24}$/;
-    //passwrod must include lower case and upper case and number and be within 6 to 24 characters
+    //password must include lower case and upper case and number and be within 6 to 24 characters
     const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,24}$/;
 
     const [userName, setUserName] = useState("");
     const [pwd, setPwd] = useState("");
     const [match, setMatch] = useState("");
-    //state of sign in page, 0=>nothing, 1=>invalid username, 2=> username is taken, 3=> invalid password 4=>password does not match, 5=>success
+    //state of sign in page, 0=>nothing, 1=>invalid username, 2=> username is taken, 3=> invalid password, 4=>password does not match, 5=>success
     const [state, setState] = useState(0);
     //whether the username has been taken
     const Message = () => {
